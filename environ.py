@@ -4,7 +4,7 @@ def application(environ, start_response):
     response_body = [
         '%s: %s' % (key, value) for key, value in sorted(environ.items())
     ]
-    response_body = '\n'.join(response_body)
+    response_body = '\r\n'.join(response_body)
     status = '200 OK'
     response_headers = [
         ('Content-Type', 'text/plain'),
@@ -17,8 +17,10 @@ def application(environ, start_response):
 httpd = make_server(
     '',
     8051,
-    application
+    application   a4babe5..850128c  main -> main
+
 )
 
 httpd.handle_request()
 
+   a4babe5..850128c  main -> main
